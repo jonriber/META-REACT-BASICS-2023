@@ -34,7 +34,7 @@ function App() {
       </div>
       <div>
         <p>
-          Status do login: {signedIn.toString()}
+          Status do login: {signedIn ? signedIn.toString(): "false"}
         </p>
       </div>
       

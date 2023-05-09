@@ -1,33 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import Blog from './components/Blog'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const 
+    [signedIn, setSignedIn] = useState(false);
+
+  function signInHandler (){
+    console.log("Sign in Handler");
+    setSignedIn(()=> setSignedIn(!signedIn) )
+  }
+
+  function logOutHandler(){
+    console.log("log out handler")
+    setSignedIn(()=> setSignedIn(false) )
+  }
+
+  useEffect(() => {
+
+  },[])
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Using MEMO with functions!</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={signInHandler}>
+          Logar
         </button>
+        <button onClick={logOutHandler}>
+          Deslogar
+        </button>
+       
+      </div>
+      <div>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Status do login: {signedIn.toString()}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+      {signedIn && 
+      <div>
+        <Blog signedIn={signedIn}/>
+      </div>
+      }
+      
     </>
   )
 }

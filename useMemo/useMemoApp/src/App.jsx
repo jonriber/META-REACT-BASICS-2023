@@ -9,17 +9,26 @@ function App() {
 
   function signInHandler (){
     console.log("Sign in Handler");
-    setSignedIn(()=> setSignedIn(!signedIn) )
+    setSignedIn(!signedIn)
   }
 
   function logOutHandler(){
     console.log("log out handler")
-    setSignedIn(()=> setSignedIn(false) )
+    setSignedIn(false)
   }
 
-  useEffect(() => {
+  function checkLogIn(){
+    console.log("Checking log in, fetching")
+    console.log("-----")
+    console.log("signedIn:",signedIn)
+  }
 
-  },[])
+  // useEffect(() => {
+  //   const log = setInterval(() => {
+  //     checkLogIn()
+  //   },4000);
+  //   return () => clearInterval(log)
+  // },[])
 
   return (
     <>
@@ -42,7 +51,7 @@ function App() {
       {signedIn && 
       <div>
         <Blog signedIn={signedIn}>
-          <First />
+
         </Blog>
       </div>
       }

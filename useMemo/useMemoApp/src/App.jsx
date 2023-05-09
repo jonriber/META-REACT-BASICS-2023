@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Blog from './components/Blog'
 import './App.css'
+import First from './components/First';
 
 function App() {
   const 
@@ -40,7 +41,9 @@ function App() {
       
       {signedIn && 
       <div>
-        <Blog signedIn={signedIn}/>
+        <Blog signedIn={signedIn}>
+          <First />
+        </Blog>
       </div>
       }
       

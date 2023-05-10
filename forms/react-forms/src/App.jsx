@@ -17,7 +17,11 @@ function App() {
         <ControlledForm />
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        To check more about it, check my github page!
+      </p>
+
+      <p className="read-the-docs">
+        Jonatas Ribeiro
       </p>
     </>
   )

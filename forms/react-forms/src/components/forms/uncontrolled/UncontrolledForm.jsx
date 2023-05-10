@@ -11,7 +11,7 @@ const UncontrolledForm = () => {
     }
     return(
         <>
-            <h1>Uncontrolled Component</h1>
+            <h3>Uncontrolled Component</h3>
             <p>Using input value stored in REAL DOM with useREF</p>
             <form onSubmit={handleSubmit}>
                 <input ref={inputRef} type="text"/>

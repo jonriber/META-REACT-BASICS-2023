@@ -1,20 +1,21 @@
-import {useReducer} from "react"
+import {useReducer, useState} from "react"
 import AddTask from "./AddTask"
 import TaskList from "./TaskList"
 import initialTasks from "../reducers/initialTasks"
 import tasksReducer from "../reducers/tasksReducer"
 
 const TaskApp = () =>{
-    let nextId = 3;
+    const [nextId,setNextId] = useState(3);
     const [tasks,dispatch] = useReducer(
         tasksReducer,
         initialTasks
     );
     
     function handlerAddTask(text){
+        setNextId((nextId) => nextId +1);
         dispatch({
             type: 'added',
-            id: nextId++,
+            id: nextId,
             text: text,
         })
     }

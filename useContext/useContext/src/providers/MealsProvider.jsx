@@ -9,7 +9,7 @@ export const MealsProvider = ({children})=> {
     const [meals, setMeals] = useState(todaysMeals);
 
     return(
-        <MealsContext.Provider value={meals}>
+        <MealsContext.Provider value={{meals,setMeals}}>
             {children}
         </MealsContext.Provider>
     )

@@ -1,12 +1,15 @@
+/* eslint-disable react/prop-types */
+import {useRef} from "react"
 
+function AddTask({addTaskHandler}){
+    const inputRef = useRef("");
 
-function AddTask(){
     return(
         <>
-            <form>
+            <form onSubmit={addTaskHandler}>
                 <fieldset>
                     <label>Adicionar Tarefa</label>
-                    <input type="text" placeholder="Nova Tarefa"/>
+                    <input ref={inputRef} type="text" placeholder="Nova Tarefa"/>
                     <button type="submit">Adicionar</button>
                 </fieldset>
             </form>

@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState, useContext } from "react";
 
 const MealsContext = createContext();
 
 const todaysMeals = ["Baked Beans","Baked Potatos","Hamburger"];
 
-const MealsProvider = ({children})=> {
+export const MealsProvider = ({children})=> {
     const [meals, setMeals] = useState(todaysMeals);
 
     return(
@@ -14,6 +15,6 @@ const MealsProvider = ({children})=> {
     )
 };
 
-export const useMealsListContext = () => useContext(MealsContext);
+export const useMealsListContext = () => useContext(MealsContext); //consume the context
 
-export default MealsProvider
+ //

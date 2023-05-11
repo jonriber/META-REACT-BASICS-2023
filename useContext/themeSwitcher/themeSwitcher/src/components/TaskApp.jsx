@@ -10,8 +10,12 @@ const TaskApp = () =>{
         tasksReducer,
         initialTasks
     );
+
+    console.log("TASKS:",tasks);
     
-    function handlerAddTask(text){
+    function handlerAddTask(e,text){
+        e.preventDefault();
+        console.log("ADD NEW TASK HANDLER!!!");
         setNextId((nextId) => nextId +1);
         dispatch({
             type: 'added',

@@ -6,7 +6,7 @@ function AddTask({addTaskHandler}){
 
     return(
         <>
-            <form onSubmit={addTaskHandler}>
+            <form onSubmit={(e) => addTaskHandler(e,inputRef.current)}>
                 <fieldset>
                     <label>Adicionar Tarefa</label>
                     <input ref={inputRef} type="text" placeholder="Nova Tarefa"/>

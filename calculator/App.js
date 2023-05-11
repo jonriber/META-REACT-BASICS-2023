@@ -67,11 +67,6 @@ import {
           <button onClick={divide}>divide</button> 
           <button onClick={resetInput}>resetInput</button> 
           <button onClick={resetResult}>resetResult</button>
-          {/* Add the subtract button */} 
-          {/* Add the multiply button */} 
-          {/* Add the divide button */} 
-          {/* Add the resetInput button */} 
-          {/* Add the resetResult button */} 
         </form> 
       </div> 
     ); 

@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import TaskApp from './components/TaskApp'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        
       </div>
-      <h1>Vite + React</h1>
+      <h1>React Context use case</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Tenho alguns dados que precisam se tornar disponível <strong>globalmente</strong> no app
         </p>
+        <p>
+          A seguir alguns exemplos de dados globais:
+        </p>
+        <ul>
+          <li>Tema</li>
+          <li>Informação de Login</li>
+          <li>Localização</li>
+          <li>Timestamp de login</li>
+        </ul>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className='taskcard'>
+        <TaskApp />
+      </div>
+
+      <footer className='footer'><b>Jonatas Ribeiro</b>. 2023</footer>
+     
     </>
   )
 }

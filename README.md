@@ -7,6 +7,10 @@ React UnControlled Components<br/>
 React Context usage<br/>
 React Reducers
 Design System with React<br/>
-React Modern Hooks and Optimization
+React Modern Hooks and Optimization<br/>
+
+This repo is used to create multiples little projects. Study purpose only!!<br/>
+
+### Check my portfolio and Github profile to view real life applications
 
 

@@ -3,7 +3,6 @@ function RadioOption({value,checked,onChange,children}){
 
     return(
         <>
-            <h4>RadioOption</h4>
             <input
                 id={value}
                 type="radio"

@@ -19,9 +19,9 @@ function App() {
           Using a RadioGroup component
         </p>
         <RadioGroup selected={selected} onChange={setSelected}>
-          <RadioOption value={"first"}/>
-          <RadioOption value={"second"}/>
-          <RadioOption value={"third"}/>
+          <RadioOption value={"first"}>First</RadioOption>
+          <RadioOption value={"second"}>Second</RadioOption>
+          <RadioOption value={"third"}>Third</RadioOption>
         </RadioGroup>
       </div>
       <p className="read-the-docs">

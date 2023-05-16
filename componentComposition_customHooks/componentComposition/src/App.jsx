@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import RadioGroup from './components/RadioGroup'
@@ -6,6 +6,10 @@ import RadioOption from './components/RadioOption';
 
 function App() {
   const [selected, setSelected] = useState("first");
+
+  useEffect(()=>{
+    document.title = `${selected} Option`
+  },[selected])
 
   return (
     <>

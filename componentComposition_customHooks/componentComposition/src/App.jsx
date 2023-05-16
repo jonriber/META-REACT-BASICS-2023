@@ -5,12 +5,13 @@ import RadioGroup from './components/RadioGroup'
 import RadioOption from './components/RadioOption';
 
 function App() {
-  const [selected, setSelected] = useState("first");
+  const [selected, setSelected] = useState("first"); //when 
 
-  useEffect(()=>{
+  useEffect(()=>{ //this one will cause app to re-render only when selected variable change
     document.title = `${selected} Option`
   },[selected])
 
+  console.log("re-rendered!!!")
   return (
     <>
      

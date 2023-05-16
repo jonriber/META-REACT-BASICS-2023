@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import RadioGroup from './components/RadioGroup'
 import RadioOption from './components/RadioOption';
+import PropTesting from './components/PropTesting';
 
 function App() {
   const [selected, setSelected] = useState("first"); //when 
@@ -10,6 +11,11 @@ function App() {
   useEffect(()=>{ //this one will cause app to re-render only when selected variable change
     document.title = `${selected} Option`
   },[selected])
+
+  const propTest = {
+    cake:"cake1",
+    cal: 400
+  };
 
   console.log("re-rendered!!!")
   return (
@@ -28,6 +34,7 @@ function App() {
           <RadioOption value={"second"}>Second</RadioOption>
           <RadioOption value={"third"}>Third</RadioOption>
         </RadioGroup>
+        <PropTesting {...propTest} cake={"tiramisu"}  cal={500} />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more

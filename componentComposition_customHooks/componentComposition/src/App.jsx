@@ -6,6 +6,7 @@ import RadioOption from './components/RadioOption';
 import PropTesting from './components/PropTesting';
 import withMousePosition from './HOCs/withMousePosition';
 import MousePositionLogger from './components/MousePositionLogger';
+import MousePositionTracker from './components/MousePositionTracker';
 
 function App() {
   const [selected, setSelected] = useState("first"); //when 
@@ -34,12 +35,12 @@ function App() {
           Using a RadioGroup component
         </p>
         <RadioGroup selected={selected} onChange={setSelected}>
-          <RadioOption value={"first"}>First</RadioOption>
-          <RadioOption value={"second"}>Second</RadioOption>
-          <RadioOption value={"third"}>Third</RadioOption>
+          <RadioOption value={"HOC"}>First</RadioOption>
+          <RadioOption value={"prop Render"}>Second</RadioOption>
         </RadioGroup>
 
-        {selected === "first" && <MousePositionLoogerTracker/>}
+        {selected === "HOC" && <MousePositionLoogerTracker/>}
+        {selected === "prop Render" && <MousePositionTracker />}
 
         <PropTesting {...propTest} cake={"tiramisu"}  cal={500} />
       </div>

@@ -7,6 +7,7 @@ import PropTesting from './components/PropTesting';
 import withMousePosition from './HOCs/withMousePosition';
 import MousePositionLogger from './components/MousePositionLogger';
 import MousePositionTracker from './components/MousePositionTracker';
+import MyButton from './components/TestButton';
 
 function App() {
   const [selected, setSelected] = useState("first"); //when 
@@ -21,8 +22,13 @@ function App() {
   };
 
   const MousePositionLoogerTracker = withMousePosition(MousePositionLogger)
-
-  console.log("re-rendered!!!")
+  var testing = [{teste:1,text:"oi"},{teste:2,text:"tchauuu"}]
+  var testing2 = [...testing].reverse()
+  const toRender = testing2.map((item,index) =>(
+    <li key={index}>{item.text}</li>
+  )
+  )
+  console.log("re-rendered!!!",testing2)
   return (
     <>
      
@@ -47,6 +53,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <MyButton onClick={() => console.log("app click")}>Submit teste</MyButton>
+
+      <ul>
+        {toRender}
+      </ul>
     </>
   )
 }

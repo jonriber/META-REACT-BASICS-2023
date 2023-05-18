@@ -8,20 +8,20 @@ const Button = ({ children, ...rest }) => {
     </button>
   )};
   
-const withClick = (Component) => {
-    const handleClick = () => {
-        console.log("WithClick");
-    };
-    return(
+const withClick = (Component) =>  //recebe um componente
+    
+    ( //retorna um novo componente não nomeado, que retorna o mesmo componente recebido, MAS, com algumas atualizações de negócio e as props
         (props) => {
-            console.log("props dentro do withClick:",props)
+            const handleClick = () => {
+                console.log("WithClick");
+            };
+
             return (
             
-            <Component  {...props} onClick={handleClick} />
+            <Component  {...props} onClick={handleClick} /> //se o spread está no começo, tudo que veio do pai, e sobre-escrevo  a propriedade onClick
         )}
     )
-    };
-  
+    
 const MyButton = withClick(Button);
 
 export default MyButton

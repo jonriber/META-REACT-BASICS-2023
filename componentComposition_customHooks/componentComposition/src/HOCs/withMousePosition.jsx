@@ -1,9 +1,9 @@
 /* eslint-disable react/display-name */
 import { useEffect, useState } from "react"
 
-const withMousePosition = (BaseComponent) => {
+const withMousePosition = (BaseComponent) => { //recebo um componente como argumento, poderia ter outros argumentos
 
-    return ((props) => {
+    return ((props) => { //retorno da função withMouseposition, que retoma uma nova função não nomeada
 
         const [mousePosition,setMousePosition] = useState({
             x:0,
